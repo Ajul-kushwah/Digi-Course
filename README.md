@@ -38,7 +38,7 @@
 
 
 <h2>My Orders</h2>
-<img src="Digi Course Project Screenshots/orders.PNG" >
+<img src="Digi Course Project Screenshots/orders.png" >
 
 
 <h2>Purchasing Course</h2>
