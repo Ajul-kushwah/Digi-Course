@@ -1,0 +1,59 @@
+{% extends 'header.html' %}
+{% load custom_filter %}
+{% block title%}
+Login
+{% endblock %}
+
+{% block content%}
+
+<div class="ui active dimmer" id="loading" hidden>
+    <div class="ui large text loader">Loading</div>
+</div>
+
+
+<div class="container ">
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="col-lg-5 col-md-8 mx-auto ui segment p-4 login-page">
+        <br>
+        <p class="display-6">Login Form</p>
+        <hr>
+        <div class="ui warning message" id="message" {% if not error %} hidden="true" {% endif %}>
+            {{ error }}
+        </div>
+        <form class="ui form" method="POST" id="form" action="/login" >
+            {% csrf_token %}
+
+            <div class="field">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="example@gmail.com" >
+            </div>
+            <div class="field">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="******" >
+            </div>
+            <div class="m-4 display-8">
+                <a href="/reset-password">Reset Password?</a>
+            </div>
+            <button class="ui button blue btn-block" id="submitButton" type="submit">Submit</button>
+        </form>
+        <div class="ui horizontal divider">
+            Or
+        </div>
+        <div class="ui large buttons mt-3 btn-block">
+          <button class="ui facebook button">
+              <i class="facebook icon"></i>Facebook
+          </button>
+          <div class="or"></div>
+          <button class="ui google plus button">
+              <i class="google plus icon"></i>Google Plus
+          </button>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

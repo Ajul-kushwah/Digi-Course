@@ -1,0 +1,592 @@
+{% extends 'header.html' %}
+{% load custom_filter %}
+{% block title%}
+    index
+{% endblock %}
+
+
+{% load static %}
+{% block content%}
+
+<style>
+
+.gradient-header{
+    background:#20bf55;
+    background: linear-gradient(315deg, #20bf55 0%,#01bae7 74%);
+}
+
+.banner .banner-col{
+    margin-top: 100px;
+}
+.banner h1{
+    margin-top: 0%;
+    color:teal;
+    font-size: 60px;
+}
+.banner p{
+    color:gray;
+    font-size: 23px;
+}
+.banner h3{
+    margin-bottom: 0%;
+    color:rgb(5, 88, 88);
+
+}
+.brands-title{
+    
+    /* margin-top: 20px; */
+    padding-top: 15px;
+    width: 100wh;
+    height: 50px;
+    display: flex;
+    justify-content: center;    
+    background: #DAF9F8;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+section .brands{
+    width: 100vw;
+    height: 200px;
+    background: #DAF9F8;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-2{
+    margin-top: 20px;
+    background-image: url("{% static 'shop/img/bg2.jpg'%}");
+    background-size:cover ;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(12, 11, 11);
+}
+.banner-2 h2{
+    font-size: 30px;
+}
+.banner-2 p{
+    font-size: 20px;
+}
+.courses{
+    margin-top: 130px;
+    background: #F8F8F8;
+    position: relative;
+}
+.pb-120{
+    padding-bottom: 120px;
+}
+.pb-115{
+    padding-top: 115px;
+}
+.pb-30{
+    padding-bottom: 30px;
+}
+.section_title h5{
+    font-size: 18px;
+    color: teal;
+}
+.section_title h3{
+    font-size: 28px;
+    color: teal;
+}
+.section_title .line {
+    padding-top: 10px;
+}
+ul, ol {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+.section_title .line li:nth-of-type(1) {
+    width: 64px;
+}.section_title .line li:nth-of-type(2) {
+    width: 10px;
+}.section_title .line li:nth-of-type(3) {
+    width: 7px;
+}
+.section_title .line li {
+    display: inline-block;
+    background-color: #00A78E;
+    border-radius: 50px;
+    height: 3px;
+}
+.courses p{
+    color: gray;
+    font-size: 22px;
+}
+.course-icon img{
+    width: 60px;
+    height: 60px;
+}
+.courses .courses-card:hover{
+    transform: translateY(-10px);
+    
+	box-shadow: 4px 10px 30px rgba(24,139,119,0.2);
+    /* background-color: #d0f7f0; */
+    /* background-color: teal; */
+    /* border: 3px solid teal; */
+    transition: all ease 0.2s;
+    /* color: white; */
+    
+}
+
+.courses .courses-bg{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.courses-bg img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+.popular .popular-col-1{
+    background: linear-gradient(to bottom, rgba(119,2,20,0.99) 0%, rgba(255,100,124,0.9) 100%),
+          url('https://d1vwxdpzbgdqj.cloudfront.net/assets/home-new/gla-bg-6e4602c6f5eb0b58d28d609d8f09ccad598e579a5582ac9ac63e10c6efca1b7c.jpg');
+    background-size: cover;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 200;
+}
+.popular .popular-col-2{
+    background: linear-gradient(to bottom, rgba(47,9,179,0.99) 0%, rgba(128,105,162,0.9) 100%),
+          url('https://d1vwxdpzbgdqj.cloudfront.net/assets/home-new/odc-bg-fa01026b5541032b7209e3ff6b38d605048a7c5e0ea20353b2806647924146c7.jpg');
+
+    background-size: cover;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 200;
+
+}
+.product-card{
+    transition: 0.2s;
+}
+.product-card:hover{
+    transform: scale(1.1);
+}
+
+
+@media only screen and (max-width:600px){
+    .banner img{
+        width: 300px;
+        height: 60%;
+    }
+    .banner .banner-col .banner-text{
+        margin-top: -30px;
+    }
+
+    section .brands-title{
+    width: 100vw;
+    height: 100px;
+    }
+    section .brands{
+    width: 100vw;
+    height: 100vh;
+    }
+    section .brands .brand-col{
+        margin-top: 25px;
+        /* margin-bottom: 3px; */
+    }
+    /* .banner .banner-col{
+        position: absolute;
+        left: 0;
+        top: 0;
+        translate:;
+    } */
+}
+
+</style>
+
+
+<div class=" mx-auto">
+    <div class="gradient-headerr banner banner-bg container">
+        
+        <div class="row align-items-center justify-content-center justify-content-lg-center flex-column-reverse flex-md-row">
+            <div class="col-md-5 banner-col banner-text ">
+                <h3>We are here for you</h3>
+                <h1>Get any course</h1>
+                
+                <p>
+                  Get your career on the <b>front foot</b>
+                  with personalize career recommendations. 
+                </p>
+    
+                <button type="button" class="ui teal basic button btn-lg">
+                  Read more
+                </button>
+                <button type="button" class="ui teal button btn-lg">
+                  Play video
+                </button>
+            </div>
+            <div class="col-md-5 banner-col  flex-column-reverse flex-md-row text-center">
+                <img
+                  src="{% static 'shop/img/web_development_.png' %}"
+                  alt="Header image" height="400px"
+                />
+            </div>
+        </div>
+    </div>
+    
+    <!--  -->
+    <section class="companies">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#00cba9" fill-opacity="1" 
+            d="M0,128L48,149.3C96,171,192,213,288,240C384,267,480,277,576,261.3C672,245,768,203,864,186.7C960,171,1056,181,1152,186.7C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+            </path>
+        </svg>
+        <div class="row g-5 brands-title">
+            <h1 class="text-center">We collaborate with <a href=""><u>200+ leading universities and companies.</u></a></h1>
+        </div>
+        <div class="text-center brands ">
+            
+            <div class="row g-5 align-items-center">
+                <div class="col-md-2 brand-col">
+                <img
+                    src="{% static 'shop/img/companies/1.png' %}"
+                    alt="Company logo"
+                    class="img-fluid"
+                />
+                </div>
+                <div class="col-md-2 brand-col">
+                <img
+                    src="{% static 'shop/img/companies/2.png '%}"
+                    alt="Company logo"
+                    class="img-fluid"
+                />
+                </div>
+                <div class="col-md-2 brand-col">
+                <img
+                    src="{% static 'shop/img/companies/3.png '%}"
+                    alt="Company logo"
+                    class="img-fluid"
+                />
+                </div>
+                <div class="col-md-2 brand-col">
+                <img
+                    src="{% static 'shop/img/companies/4.png '%}"
+                    alt="Company logo"
+                    class="img-fluid"
+                />
+                </div>
+                <div class="col-md-2 brand-col">
+                <img
+                    src="{% static 'shop/img/companies/5.png '%}"
+                    alt="Company logo"
+                    class="img-fluid"
+                />
+                </div>
+                <div class="col-md-2 brand-col">
+                <img
+                    src="{% static 'shop/img/companies/6.png '%}"
+                    alt="Company logo"
+                    class="img-fluid"
+                />
+                </div>
+          </div>
+        </div>
+      </section>
+    <!--  -->
+    <div class="gradient-headerr banner mt-5">
+        <!-- <div class="circle"></div> -->
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-5 mt-3 text-center">
+                <!-- <img
+                  src="{% static 'shop/img/online_storage.png' %}"
+                  alt="Header image" height="400px"
+                /> -->
+                <img
+                  src="{% static 'shop/img/logo-big-removebg.png' %}"
+                  alt="Header image" height="400px"
+                />
+            </div>
+            <div class="col-md-5">
+                <h2>Build career with Digi Course</h2>
+    
+                <p>
+                  It's crafted with the latest trend of design & coded with all
+                  modern approaches. It's a robust & multi-dimensional usable
+                  template.
+                </p>
+    
+                <button type="button" class="ui teal basic button btn-lg">
+                    Read more
+                </button>
+                <button type="button" class="ui teal button btn-lg">
+                Play video
+                </button>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <!--  -->
+    <div class="courses pb-120 pb-115" >
+        <div class="m-3 courses-bg">
+            <img src="{% static 'shop/img/shape-3.png'%}" alt="">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section_title text-center pb-30">
+                    <h5 class="sub_title">Courses</h5>
+                    <h3 class="main_title">Courses that we Provide</h3>
+                    <ul class="line">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+        <div class="row justify-content-center align-item-center m-3">
+            <div class="col-lg-4 col-md-6  shadow-sm">
+                <div class="text-center p-3 courses-card">
+                    <div class="course-icon">
+                        <img src="{% static 'shop/img/all_svg/html5-brands.svg'%}" alt="">
+                    </div>
+                    <h3>Html</h3>
+                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing
+                       adipisicing elit.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6  shadow-sm ">
+                <div class="text-center p-3 courses-card">
+                    <div class="course-icon">
+                        <img src="{% static 'shop/img/all_svg/css3-alt-brands.svg'%}" alt="" >
+                    </div>
+                    <h3>CSS3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                       adipisicing elit.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 shadow-sm ">
+                <div class="text-center  p-3 courses-card">
+                    <div class="course-icon">
+                        <img src="{% static 'shop/img/all_svg/js-brands.svg'%}" alt="" >
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                       adipisicing elit.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center align-item-center m-3">
+            <div class="col-lg-4 col-md-6 shadow-sm">
+                <div class="text-center p-3 courses-card">
+                    <div class="course-icon">
+                        <img src="{% static 'shop/img/all_svg/python-brands.svg'%}" alt="" >
+                    </div>
+                    <h3>Python</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                       adipisicing elit.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 shadow-sm">
+                <div class="text-center p-3 courses-card">
+                    <div class="course-icon">
+                        <img src="{% static 'shop/img/all_svg/c-brands.svg'%}" alt="">
+                        
+                    </div>
+                    <h3>C</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                       adipisicing elit.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 shadow-sm">
+                <div class="text-center p-3 courses-card">
+                    <div class="course-icon">
+                        <img src="{% static 'shop/img/all_svg/java-brands.svg'%}" alt="" >
+                    </div>
+                    <h3>Java</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                       adipisicing elit.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!--  -->
+    <div class="banner-2">
+        <div class="row">
+            <div class="col-12 text-center py-auto">
+                <h2>Get personal learning recommendations</h2>
+                <p>Answer a few questions for your top picks</p>
+                <a class=" ui basic button secondary">Get Start</a>
+                <!-- <button class="btn btn-outline-success waves-effect" >Get Start</button> -->
+            </div>
+        </div>
+    </div>
+    <!-- products -->
+    <div class="pb-115 pb-120">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section_title text-center pb-30">
+                    <h5 class="sub_title">Courses</h5>
+                    <h3 class="main_title">Courses that we Provide</h3>
+                    <ul class="line">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+        <!-- <h1 class="text-center">Explore our Top Ranked programs</h1> -->
+        <div class="row mt-4">
+            {% for product in products %}
+    
+            <div class="col-lg-3 col-md-6 col-sm-6 p-3">
+                <div class="card shadow product-card mx-auto" style="width: 18rem;">
+                    <img class="card-img-top" style="height: 15rem;" src="{{product.thumbnail.url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4>{{ product.name|title }}</h4>
+                        <hr/>
+    
+                        <p class="text-danger p-0 m-0">Save {{ product.discount}}%</p>
+                        <p>Price : <del>{{product.price |rupee }}</del> {{product|sale_price |rupee}} </p>
+                    </div>
+                    <div class="card-footer p-0">
+                       <a href="/product/{{product.id}}" class="btn btn-light btn-block">Show More</a>
+                    </div>
+                </div>
+            </div>
+    
+    
+            {% endfor %}
+        </div>
+    </div>
+    <!--  -->
+    <!--  -->
+    <div class="m-3 p-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section_title text-center pb-30">
+                    <h5 class="sub_title">Topics</h5>
+                    <h3 class="main_title">Popular Topics</h3>
+                    <ul class="line">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+        <!-- <h2 class="text-center mt-4">Popular Topics</h2> -->
+        <div class=" row p-2 mt-2">
+            <div class="col-md-3 mt-2">
+                <a href="" 
+                class="btn border border-success text-success btn-block btn-lg">
+                Web development</a>
+            </div>
+            <div class="col-md-3 mt-2">
+                <a href="" 
+                class="btn border border-success text-success btn-block btn-lg">
+                Data Structure & Algorithm</a>
+            </div>
+            <div class="col-md-3 mt-2">
+                <a href="" 
+                class="btn border border-success text-success btn-block btn-lg">
+                Cloud service</a>
+            </div>
+            <div class="col-md-3 mt-2">
+                <a href="" 
+                class="btn border border-success text-success btn-block btn-lg">
+                Programmings</a>
+            </div>        
+        </div>
+        <div class=" row p-2">
+            <div class="col-md-3 mt-2">
+                <a href="" class="btn border border-success text-success btn-block btn-lg">Machine Learning</a>
+            </div>
+            <div class="col-md-3 mt-2">
+                <a href="" class="btn border border-success text-success btn-block btn-lg">Electronics</a>
+            </div>
+            <div class="col-md-3 mt-2">
+                <a href="" class="btn border border-success text-success btn-block btn-lg">Cyber Security</a>
+            </div>
+            <div class="col-md-3 mt-2">
+                <a href="" class="btn border border-success text-success btn-block btn-lg">Android app</a>
+            </div>        
+        </div>
+    </div>
+
+
+    <!-- column 2 -->
+    <div class="popular container mt-5 mb-5">
+        <div class="row m-2 justify-content-center align-item-center">
+            <div class="col-lg-5 col-md-6 rounded popular-col-1 ml-2 mr-2 mt-2">
+                <div class="p-2 ">
+                    <h3>Digi Learning Academy</h3>
+                    <p>Learn the most in-demand skills for free</p>
+                    <a href="" class="btn btn-info outline">Start Learning Now</a>
+                </div>    
+            </div>
+            <div class="col-lg-5 col-md-6 rounded popular-col-2 ml-2 mr-2 mt-2">
+                <div class="p-2">
+                    <h3>Digi promoters new talent</h3>
+                    <p>Learn the most in-demand skills for free</p>
+                    <a href="" class="btn btn-info">Start Learning Now</a>
+                </div>    
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!--  -->
+    <div class="row m-3 align-items-center justify-content-center">
+        <div class="col-md-5">
+            <img class="img-fluid" src="{% static 'shop/img/gl.jpg' %}" height="400px" width="400px">
+        </div>
+        <div class="col-md-5 mt-2 justify-content-center">
+            <h2>Become an instructor</h2>
+            <p class="text-secondary display-8">Top instructors from around the world teach <br>
+                millions of students on Udemy.<br> 
+               We provide the tools and skills to teach what you love.
+            </p>
+
+            <button class="btn btn-success font-weight-bold btn-lg">Starting Teaching Today</button>
+        </div>
+    </div>
+
+    <!--  -->
+
+    <div class="row m-3  flex-column-reverse flex-md-row align-items-center justify-content-center">
+        
+        <div class="col-md-5 mt-2">
+            <h2>Digi for Business</h2>
+            <p class="text-secondary display-8">
+                Get unlimited access to 4,000+ of Digi’s top <br>
+                courses for your team.
+            </p>
+
+            <button class="btn btn-info font-weight-bold btn-lg">Digi for Business</button>
+        </div>
+        <div class="col-md-5">
+            <img class="img-fluid" src="{% static 'shop/img/by.jpg' %}" height="400px" width="400px">
+        </div>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    window.addEventListener("scroll",function(){
+        var header = document.querySelector("nav");
+        header.classList.toggle("sticky",window.scrollY > 0);
+    })
+</script>
+
+{% endblock %}

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Font awesome CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><!--    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>-->
+    
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.min.css'>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shop/css/common.css'%}">
+    <link rel="stylesheet" href="{% static 'shop/css/semantic.min.css'%}">
+
+    <script src="{% static 'shop/node_modules/sweetalert2/dist/sweetalert2.all.min.js' %}"></script>
+    <script src="{% static 'shop/js/logout_.js' %}"></script>
+
+    <title>{% block title %}  {% endblock %}</title>
+    <style>
+      .header-top.sticky{
+        background:#fff;
+        box-shadow: 5px 10px 20px rgba(0,0,0,0.5);
+      }
+      .header-top{
+        transition: 0.6s;
+      }.nav-link{
+        color: black;
+        list-style: none;
+        font-size: 15px;
+        letter-spacing: 0.2px;
+      }
+      .nav-link:hover{
+        font-weight: bold;
+        color: teal;
+      }
+      .sub-menu-bar{
+        background: white;
+        margin-top: 3px;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        display: none;
+      }
+      @media only screen  and (max-width: 760px){
+        .sub-menu-bar{
+        background: rgb(210, 240, 240);
+        margin-top: 3px;
+        border-bottom: 1px solid teal;
+        }
+      }
+      @media only screen  and (max-width: 992px){
+        .sub-menu-bar{
+        /* background: rgb(210, 240, 240); */
+        margin-top: 3px;
+        border-bottom: 1px solid teal;
+        }
+      }
+    </style>
+  </head>
+  <body>
+<!--  start navbar-->
+  <nav class="navbar navbar-expand-lg fixed-top header-top navbar-light white">
+  <a  href="/">
+    <img src="{% static 'shop/img/logo-0-removebg.png' %}" width="" height="50px">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+
+
+  <div class="navbar-collapse sub-menu-bar collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav  align-items-center ml-4">
+      <li class="nav-item active">
+        <a class="nav-link font-weight-bold" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'all_products' %}" class="nav-link">All Courses</a>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link" >About us</a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a href="" class="nav-link" >Contact</a>
+      </li>
+    </ul>
+    <!-- ########################################   -->
+    <ul class="navbar-nav ml-auto align-items-center">
+      {% if request.session.user  %}
+      <li class="nav-item ">
+        <a class="nav-link" href="/orders"><i class="heart icon"></i>My Wishlist</a>
+      </li><li class="nav-item ">
+        <a {% if active %}class="nav-link active"{% else %}class="nav-link"{% endif %} href="/orders"><i class="cart icon"></i>My Orders</a>
+      </li>
+      <li class="nav-item mt-2 mb-2">
+        <div class="ui inline dropdown">
+          <div class="text">
+            <img class="ui avatar image" src="https://i.imgur.com/0mlhi8G.png">
+          Ajul kush
+          </div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <a href="/profile" class="item"><i class="user icon"></i> Profile</a>
+            <a href="" class="item"><i class="settings icon"></i> Settings</a>
+            <a href="/logout" class="item"><i class="logout icon"></i> Logout</a>
+          </div>
+        </div>
+      </li>
+      {% else %}
+      <li class="nav-item mr-2  mb-2">
+        <a class=" ui teal basic button" href="/login">Login</a>
+      </li>
+      <li class="nav-item mr-2  mb-2">
+        <a class=" ui teal button" href="/signup">Signup</a>
+      </li>
+      {% endif %}
+      <!-- <li class="nav-item">
+        <button class="nav-link" onclick="sweetalertclick()">Logout</button>
+      </li> -->
+    </ul>
+
+  </div>
+</nav>
+<!--  end navbar-->
+
+
+{% block content%}
+
+{% endblock %}
+
+<a id="back-to-top" href="/" 
+   class="btn btn-info btn-lg back-to-top" role="button">
+  <i class="fa fa-chevron-up"></i>
+</a>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">&copy; 2017-2020 Company Name</p>
+  <ul class="list-inline">
+    <li class="list-inline-item"><a href="#">Privacy</a></li>
+    <li class="list-inline-item"><a href="#">Terms</a></li>
+    <li class="list-inline-item"><a href="#">Support</a></li>
+  </ul>
+</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    
+
+    <script src= 
+    "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"> 
+    </script> 
+
+    <script>
+          $('.dropdown')
+    .dropdown({
+      // you can use any ui transition
+      transition: 'drop'
+    })
+    ;
+    </script>
+    <script type="text/javascript">
+      window.addEventListener("scroll",function(){
+          var header = document.querySelector("nav");
+          header.classList.toggle("sticky",window.scrollY > 0);
+      })
+    </script>
+    <script>
+      $(document).ready(function(){
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+              $('#back-to-top').fadeIn();
+            } else {
+              $('#back-to-top').fadeOut();
+            }
+          });
+          // scroll body to 0px on click
+          $('#back-to-top').click(function () {
+            $('body,html').animate({
+              scrollTop: 0
+            }, 400);
+            return false;
+          });
+      });
+    </script>
+
+  </body>
+</html>
+
+<!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+Nobis, in. Tempora delectus aspernatur iste eligendi id 
+laborum, soluta sapiente harum eius neque corporis 
+maiores accusamus praesentium rerum aut iusto voluptates! -->

@@ -1,0 +1,76 @@
+{% extends 'header.html' %}
+{% load custom_filter %}
+{% block title%}
+Signup
+{% endblock %}
+
+
+{% block content%}
+
+<div class="ui active dimmer" id="loading" hidden>
+    <div class="ui large text loader">Loading</div>
+</div>
+
+
+
+<div class="container mt-4">
+    
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="col-lg-5 col-md-8 mx-auto ui segment p-4">
+        <br>
+        <p class="display-6">Signup Form</p>
+        <hr>
+        <div class="ui warning message" id="message" {% if not error %} hidden="true" {% endif %}>
+            {{ error }}
+        </div>
+        <div class="ui warning message" id="wrong-otp"  hidden="true">
+            Wrong Otp
+        </div>
+        <form class="ui form" method="POST" id="form" action="/signup/" onsubmit="return validate(event)">
+            {% csrf_token %}
+            <div class="field">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Name" >
+            </div>
+            <div class="field">
+                <label>Phone</label>
+                <input type="number" name="phone" id="phone" placeholder="9876543210">
+            </div>
+            <div class="field">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="example@gmail.com" >
+            </div>
+            <div class="field">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="******" >
+            </div>
+            <div class="field">
+                <label>Re-Enter Password</label>
+                <input type="password" name="repassword" placeholder="******" >
+            </div>
+<!--            <div class="field">-->
+<!--                <div class="ui checkbox">-->
+<!--                    <input type="checkbox" tabindex="0" class="hidden">-->
+<!--                    <label>I agree to the Terms and Conditions</label>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <div id="verificationInput" class="field" hidden>
+                <label>Verification Code</label>
+                <input type="text" name="code" id="code" placeholder="" >
+            </div>
+            <button class="ui button teal btn-block" id="submitButton" type="submit">Submit</button>
+            <a class="ui button teal btn-block" onclick="verifyCode()" id="verifyButton" hidden>Verify</a>
+        </form>
+
+    </div>
+</div>
+
+{% load static %}
+<script src="{% static 'shop/js/sign_up.js' %}"></script>
+
+{% endblock %}

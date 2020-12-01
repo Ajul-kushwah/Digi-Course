@@ -1,0 +1,209 @@
+
+Git Tutorials					haris989
+
+
+-------------------------------------------------------------
+some steps for add repository on github:
+--------------------------------------------------------------
+git status
+git init
+git add .
+git commit -m "something"
+git remote add origin (ssh link)
+git commit -m "something"
+git push -u origin master
+---------------------------------------------------------------
+
+
+
+--------------------------------commands------------------------------
+
+git status:
+	for known status of project as changes.
+
+command: git status
+
+git version:
+	for known version of the git in our system.
+
+command: git --version
+ 
+
+git init: 
+	for initialize git repository to current repository/folder 
+
+command: git init 
+
+
+git add:
+	use for staging to the working directory,before commits
+
+command: git add .
+
+git commit:
+	use for commit the project repository on git.
+
+command: git commit -m "text about changes line or etc."
+	
+
+	
+git log:
+	use for know info. about changes that done by user
+	in project.it also give user info. as email 
+	
+	to check commit information that done in repository.
+
+command: git log
+
+
+git config:
+
+command-
+
+	git config --global user.name " user_name " 
+		
+			or
+
+	git config --global user.email " user_email " 
+
+git remote add origin :
+
+command : git remote add origin ssh link
+	or
+command: git remote add origin git@github.com:Ajul-kushwah/TODO.git
+
+
+
+
+git push:
+	for set/sand/save project on internet(github ) 
+
+command: git push -u origin master
+	
+	
+git pull:
+	for receive/get project from internet(github)
+
+command: git pull origin master
+
+	
+
+
+git diff:
+
+command:  git diff file_name.txt   or  git diff
+
+it gives whole details about changes in file of project
+
+Eg.
+git diff projectVersion.txt
+
+diff --git a/projectVersion.txt b/projectVersion.txt
+index b355718..5500f58 100644
+--- a/projectVersion.txt
++++ b/projectVersion.txt
+@@ -1 +1 @@		-- watch here
+			|_
+-this is version four of the project     
+\ No newline at end of file
++this is version five(5) of the project
+\ No newline at end of file
+
+
+if we want to know about changes  that done in project files 
+after staging(git add .) then we run command as:
+
+git diff --staged file_name.extension 
+
+
+
+git reset:
+
+we have some change in project files  and commit it at github
+but now i want to get my that files without changes  then
+
+for unstage the project files
+
+command:   git reset file_name.extension
+
+after that, checkout this , use command
+
+command: git checkout file_name.extension
+
+Note- file name should be same in both git reset and git checkout
+
+
+
+git checkout:
+	if we want to unstage to all file changes then
+
+command: git checkout .
+
+
+
+
+git clone:
+	it is use for cloning the project.
+	ssh link will be used for it 
+
+command: git clone https://github.com/Ajul-kushwah/Git-Tutorial.git
+			
+			or
+	
+	git clone https://github.com/Ajul-kushwah/Git-Tutorial.git .
+
+
+Ignoring Files in git by Adding .gitignore file: 
+
+	visit link-https://help.github.com/en/github/using-git/ignoring-files
+
+	visit link-https://gist.github.com/octocat/9257657
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------
+Difference b/w in git add . and git add -A
+------------------------------------------------------------------------------
+>git add -A   stage All
+>git add .     stage new and modified,without deleted
+>git add -u   stage modified and deleted,without new
+------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#####################################################
+…or create a new repository on the command line
+echo "# Git-Tutorial" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:Ajul-kushwah/Git-Tutorial.git
+git push -u origin master
+                
+…or push an existing repository from the command line
+git remote add origin git@github.com:Ajul-kushwah/Git-Tutorial.git
+git push -u origin master 
+
+
+------------------------------------------|
+github account: 	               |
+------------------------------------------|
+ajulkushwah786@gmail.com    |
+987654321@Ajul	               |
+------------------------------------------| 

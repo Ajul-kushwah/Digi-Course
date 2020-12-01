@@ -1,0 +1,82 @@
+{% extends 'header.html' %}
+{% load custom_filter %}
+{% block title%}
+    index
+{% endblock %}
+
+{% block content%}
+
+{% load static %}
+<style>
+.gradient {
+  background: rgb(0, 97, 242);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 97, 242, 1) 0%,
+    rgba(105, 0, 199, 1) 100%
+  );
+}
+</style>
+
+<br>
+<br>
+<br>
+<br>
+<div class=" mx-auto">
+
+    <div class="row mx-auto mt-3">
+        {% for product in products %}
+
+        <div class="col-lg-3 col-md-4 col-sm-5 p-2">
+            <div class="card mx-auto" style="width: 18rem;">
+                <img class="card-img-top" style="height: 15rem;" src="{{product.thumbnail.url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h4>{{ product.name|title }}</h4>
+                    <hr/>
+
+                    <p class="text-danger p-0 m-0">Save {{ product.discount}}%</p>
+                    <p>Price : <del>{{product.price |rupee }}</del> {{product|sale_price |rupee}} </p>
+                </div>
+                <div class="card-footer p-0">
+                   <a href="/product/{{product.id}}" class="btn btn-light btn-block">Show More</a>
+                </div>
+            </div>
+        </div>
+
+
+        {% endfor %}
+    </div>
+    
+</div>
+
+{% endblock %}
+
+
+<!-- <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="toggler-icon"></span>
+    <span class="toggler-icon"></span>
+    <span class="toggler-icon"></span>
+</button> -->
+
+<!-- <div class="navbar-collapse sub-menu-bar collapse" id="navbarSupportedContent" style="">
+    <ul id="nav" class="navbar-nav ml-auto">
+    <li class="nav-item active">
+    <a class="page-scroll" href="#home">Home <span></span></a>
+    </li>
+    <li class="nav-item">
+    <a class="page-scroll" href="#about">About<span></span></a>
+    </li>
+    <li class="nav-item">
+    <a class="page-scroll" href="#services">Services<span></span></a>
+    </li>
+    <li class="nav-item">
+    <a class="page-scroll" href="#project">Portfolio<span></span></a>
+    </li>
+    <li class="nav-item">
+    <a class="page-scroll" href="#pricing">Pricing<span></span></a>
+    </li>
+     <li class="nav-item">
+    <a class="page-scroll" href="#work">Experience<span></span></a>
+    </li>
+    </ul>
+</div> -->
