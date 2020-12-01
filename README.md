@@ -1,3 +1,3 @@
 # Digi-Course
 
-<img scr="Digi Course Project Screenshots/home-1.png" >
+<img src="Digi Course Project Screenshots/home-1.PNG" >
