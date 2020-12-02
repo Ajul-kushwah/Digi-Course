@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=3o$*z6!8k@w5ifxl9^2#r2)iku_ya$5g0*z*x##ym!)=*zq!6'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -127,12 +127,12 @@ MEDIA_URL ='/a/b/c/d/'
 MEDIA_ROOT =BASE_DIR
 
 EMAIL_SERVICE_ENDPOINT = "https://api.sendinblue.com/v3/smtp/email"
-EMAIL_SENDER_NAME = "ajul kushwah"
-EMAIL_SENDER_EMAIL = "ajulkushwah786@gmail.com"
+EMAIL_SENDER_NAME = "abcd"
+EMAIL_SENDER_EMAIL = "abcd@gmail.com"
 
-EMAIL_API_KEY = "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"
+EMAIL_API_KEY = ""
 
 
 ###########################################################
-PAYMENT_API_KEY ='test_02baf1c264419eaebdbb2b6c5ec'
-PAYMENT_API_AUTH_TOKEN ='test_c2e13f7f55bddcd19e0a72e2cb2'
+PAYMENT_API_KEY =''
+PAYMENT_API_AUTH_TOKEN =''
