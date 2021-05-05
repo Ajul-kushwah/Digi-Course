@@ -127,9 +127,11 @@ USE_TZ = True
 STATIC_URL = '/static/files/'
 STATIC_ROOT = 'static'
 
-MEDIA_URL ='/a/b/c/d/'
+# MEDIA_URL ='/a/b/c/d/'
 
-MEDIA_ROOT =BASE_DIR
+MEDIA_ROOT =BASE_DIR / 'uploads'
+MEDIA_URL='/uploads/'
+
 
 EMAIL_SERVICE_ENDPOINT = "https://api.sendinblue.com/v3/smtp/email"
 EMAIL_SENDER_NAME = "abcd"
