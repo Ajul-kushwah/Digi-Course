@@ -38,10 +38,10 @@ def sendEmail(name, email, subject, htmlContent):
     #                                     headers=headers)
 
     return requests.post(
-        "https://api.mailgun.net/v3/sandbox9ca2cb3e56534a23a4568458a9d3a266.mailgun.org/messages",
-        auth=("api", "f6dd23f2255bb16a341a8f575d705f0c-203ef6d0-f8635cc1"),
-        data={"from": "Ajul Kushwah <ajul@sandbox9ca2cb3e56534a23a4568458a9d3a266.mailgun.org>",
-              "to": [email],#["ajulkushwah786@gmail.com"],
+        "",#api link
+        auth=("api", ""),#api key
+        data={"from": "",
+              "to": [email],#["abcd@gmail.com"],#email
               "subject": subject,
               "html": htmlContent})
 

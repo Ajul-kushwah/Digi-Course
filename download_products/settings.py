@@ -25,7 +25,7 @@ SECRET_KEY = '=3o$*z6!8k@w5ifxl9^2#r2)iku_ya$5g0*z*x##ym!)=*zq!6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['1c6353c713d2.ngrok.io','localhost']
+ALLOWED_HOSTS = ['ajul-kushwah-digi-course-3316.zeet.app','localhost']
 # APPEND_SLASH = False
 
 # Application definition
@@ -107,7 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -127,12 +128,12 @@ MEDIA_URL ='/a/b/c/d/'
 MEDIA_ROOT =BASE_DIR
 
 EMAIL_SERVICE_ENDPOINT = "https://api.sendinblue.com/v3/smtp/email"
-EMAIL_SENDER_NAME = "ajul kushwah"
-EMAIL_SENDER_EMAIL = "ajulkushwah786@gmail.com"
+EMAIL_SENDER_NAME = "abcd"
+EMAIL_SENDER_EMAIL = "abcd@gmail.com"
 
-EMAIL_API_KEY = "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"
+EMAIL_API_KEY = ""
 
 
 ###########################################################
-PAYMENT_API_KEY ='test_02baf1c264419eaebdbb2b6c5ec'
-PAYMENT_API_AUTH_TOKEN ='test_c2e13f7f55bddcd19e0a72e2cb2'
+PAYMENT_API_KEY =''
+PAYMENT_API_AUTH_TOKEN =''
