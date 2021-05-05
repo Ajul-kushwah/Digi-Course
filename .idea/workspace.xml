@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbce3e31-4d96-4baf-8e65-8c0dac5604ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/download_products/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/download_products/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
