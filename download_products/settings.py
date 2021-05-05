@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '=3o$*z6!8k@w5ifxl9^2#r2)iku_ya$5g0*z*x##ym!)=*zq!6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+# DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['digi-course.herokuapp.com','localhost']
 # APPEND_SLASH = False
