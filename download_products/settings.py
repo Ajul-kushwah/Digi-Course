@@ -26,7 +26,7 @@ SECRET_KEY = '=3o$*z6!8k@w5ifxl9^2#r2)iku_ya$5g0*z*x##ym!)=*zq!6'
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['digi-course.herokuapp.com','localhost']
 # APPEND_SLASH = False
 
 # Application definition
