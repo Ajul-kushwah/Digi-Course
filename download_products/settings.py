@@ -25,7 +25,7 @@ SECRET_KEY = '=3o$*z6!8k@w5ifxl9^2#r2)iku_ya$5g0*z*x##ym!)=*zq!6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ajul-kushwah-digi-course-3316.zeet.app','localhost']
+ALLOWED_HOSTS = ['localhost']
 # APPEND_SLASH = False
 
 # Application definition
