@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '=3o$*z6!8k@w5ifxl9^2#r2)iku_ya$5g0*z*x##ym!)=*zq!6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost']
 # APPEND_SLASH = False
@@ -43,6 +44,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # whiltenoise
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

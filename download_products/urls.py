@@ -19,9 +19,18 @@ from shop import views
 from django.conf.urls.static import static
 from download_products.settings import \
     MEDIA_URL,MEDIA_ROOT,STATIC_URL,STATIC_ROOT
+from django.conf.urls import url
+from django.views.static import serve
+from django.conf import settings
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('shop.urls'))
+    path('',include('shop.urls')),
+
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':  settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+
 ]+static(MEDIA_URL ,document_root=MEDIA_ROOT)+\
               static(STATIC_URL ,document_root=STATIC_ROOT)
 
